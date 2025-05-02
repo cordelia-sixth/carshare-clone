@@ -1,5 +1,6 @@
 import { Button } from '@/components/button';
 import { GuideLink } from '@/components/guideLink';
+import { Information } from '@/components/information';
 import { BookText, OctagonAlert } from 'lucide-react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
@@ -38,6 +39,7 @@ export default function Home() {
           title="事故・トラブルの手引き"
           description="もしもの際に落ち着いて対応できるように、こちらから事故・トラブル時の手順について、あらかじめご確認ください。"
         />
+        <Information information="ご利用にはユーザー登録が必要になります。" />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]"></footer>
     </div>
