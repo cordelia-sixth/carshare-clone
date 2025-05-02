@@ -1,4 +1,6 @@
 import { Button } from '@/components/button';
+import { GuideLink } from '@/components/guideLink';
+import { BookText, OctagonAlert } from 'lucide-react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 const geistSans = Geist({
@@ -24,6 +26,18 @@ export default function Home() {
         >
           ログイン
         </Button>
+        <GuideLink
+          icon={<BookText />}
+          url="#"
+          title="ご利用方法"
+          description="こちらから利用方法をご確認ください。特に利用開始時・利用終了時の手順について、あらかじめご確認ください。"
+        />
+        <GuideLink
+          icon={<OctagonAlert />}
+          url="#"
+          title="事故・トラブルの手引き"
+          description="もしもの際に落ち着いて対応できるように、こちらから事故・トラブル時の手順について、あらかじめご確認ください。"
+        />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]"></footer>
     </div>
