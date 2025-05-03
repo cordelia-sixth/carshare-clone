@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import { SPMenu } from '@/components/menu/sp-menu';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 
@@ -10,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Header />
         <Component {...pageProps} />
         <Footer />
+        <SPMenu />
       </div>
     </>
   );
