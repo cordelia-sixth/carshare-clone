@@ -1,5 +1,4 @@
 import { ClipboardList, House, Map } from 'lucide-react';
-import { Button } from '../button';
 
 export const PCMenu = () => {
   return (
@@ -15,7 +14,6 @@ export const PCMenu = () => {
           <ClipboardList size={15} />
         </li>
       </ul>
-      <Button handleClick={() => {}}>ログイン</Button>
     </div>
   );
 };

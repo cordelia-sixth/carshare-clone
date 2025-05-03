@@ -13,7 +13,7 @@ export const Button = ({ handleClick, children }: Props) => {
   return (
     <button
       onClick={handleClick}
-      className="rounded-md bg-blue-500 px-4 py-2 font-semibold text-white"
+      className="rounded-md bg-blue-500 px-4 py-2 text-xs font-semibold text-white"
     >
       {children}
     </button>
