@@ -1,4 +1,3 @@
-import { Button } from '@/components/button';
 import { GuideLink } from '@/components/guideLink';
 import { Information } from '@/components/information';
 import { BookText, OctagonAlert } from 'lucide-react';
@@ -17,16 +16,9 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20`}
+      className={`${geistSans.className} ${geistMono.className} font-[family-name:var(--font-geist-sans)]`}
     >
-      <main className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
-        <Button
-          handleClick={() => {
-            alert('hello');
-          }}
-        >
-          ログイン
-        </Button>
+      <main className="m-auto max-w-[960px] space-y-3 p-4">
         <GuideLink
           icon={<BookText />}
           url="#"
@@ -41,7 +33,6 @@ export default function Home() {
         />
         <Information information="ご利用にはユーザー登録が必要になります。" />
       </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]"></footer>
     </div>
   );
 }
