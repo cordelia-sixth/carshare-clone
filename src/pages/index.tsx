@@ -33,6 +33,7 @@ export default function Home() {
             description="もしもの際に落ち着いて対応できるように、こちらから事故・トラブル時の手順について、あらかじめご確認ください。"
           />
         </div>
+
         <Information information="ご利用にはユーザー登録が必要になります。" />
       </main>
     </div>
