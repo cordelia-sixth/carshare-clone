@@ -1,6 +1,5 @@
-import { lineAuth } from '@/lib/lineAuth';
 import { Menu } from 'lucide-react';
-import { Button } from './button';
+import { AuthArea } from './authArea';
 import { PCMenu } from './menu/pc-menu';
 
 /**
@@ -16,7 +15,8 @@ export const Header = () => {
         </div>
         <div className="flex gap-2">
           <PCMenu />
-          <Button handleClick={lineAuth}>ログイン</Button>
+
+          <AuthArea />
         </div>
       </div>
     </header>
