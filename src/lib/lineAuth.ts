@@ -35,6 +35,7 @@ export const lineAuth = async () => {
     const result = await signInWithPopup(fireAuth, lineProvider);
     await saveUserInfo(result.user);
     // console.log('ログイン成功', result);
+    return { success: true, message: 'ログイン成功' };
   } catch (error) {
     if (error instanceof FirebaseError) {
       return { success: false, message: error.code };

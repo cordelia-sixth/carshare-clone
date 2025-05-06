@@ -6,7 +6,10 @@ import { useState } from 'react';
 import { Button } from './button';
 
 export const AuthArea = () => {
+  console.log('AuthAreaがレンダリングされました');
+
   const user = useAuthState();
+  console.log('現在のuser', user);
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   const handleLogin = async () => {
@@ -19,11 +22,6 @@ export const AuthArea = () => {
 
     setIsAuthenticating(false); // 完了（成功でも失敗でも）
   };
-
-  // 認証中なら Loading 表示
-  if (isAuthenticating) {
-    return <p>Loading...</p>;
-  }
 
   // ログイン済みならログアウトボタン
   if (user) {

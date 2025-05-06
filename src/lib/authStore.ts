@@ -3,16 +3,19 @@
  */
 import { User } from 'firebase/auth';
 
+// ログインユーザー型
+export type LoginUser = User | null | undefined;
+
 /**
  * ログイン状態が変わった時に実行される関数（今回はuseStateのsetUser関数）の型
  * setUser関数は引数にユーザー状態を受け取り、stateを更新する
  * nullはログインしていない（初期状態）。userはログインしている（ユーザー情報）
  */
-type Listener = (user: User | null) => void;
+type Listener = (user: LoginUser) => void;
 
 // アプリ内で共有される現在のユーザー情報
 // nullはログインしていない（初期状態）
-let currentUser: User | null = null;
+let currentUser: LoginUser = null;
 
 // Set<Listeners> はsetUser()を複数保持する集合体
 // つまりlistenersはsetUser()をいくつも持つ
@@ -24,13 +27,13 @@ const listeners = new Set<Listener>();
 // つまりonAuthChangedが実行されたらこの関数も実行されて
 // authStoreが保持するログイン状態を更新する（currentUserが更新される）
 // さらにログイン状態が必要なコンポーネントに通知される（そのコンポーネントのstateが更新される）
-export const setUser = (user: User | null) => {
+export const updateUser = (user: LoginUser) => {
   // 現在のログイン状態を更新
   currentUser = user;
 
   // 購読している全てのコンポーネントにも現在のログイン状態を送る
   // こうするとそのコンポーネントも再レンダリングされる
-  listeners.forEach((l) => l(user));
+  listeners.forEach((listener) => listener(user));
 };
 
 // authStoreが持つ現在のログイン状態を返す関数
@@ -46,5 +49,8 @@ export const subscribe = (listener: Listener) => {
 
   // コンポーネントがアンマウントされた時にlistener（state更新関数）を削除する処理
   // 使う側はunsubscribe関数として受け取る。
-  return () => listeners.delete(listener);
+  // これがないとlistener（コンポーネント）がSetに溜まり続けてしまう。
+  return () => {
+    listeners.delete(listener);
+  };
 };
