@@ -1,5 +1,5 @@
+import { Main } from '@/components/auth/main';
 import { GuideLink } from '@/components/guideLink';
-import { Information } from '@/components/information';
 import { BookText, OctagonAlert } from 'lucide-react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
@@ -34,7 +34,7 @@ export default function Home() {
           />
         </div>
 
-        <Information information="ご利用にはユーザー登録が必要になります。" />
+        <Main />
       </main>
     </div>
   );
