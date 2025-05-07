@@ -6,10 +6,7 @@ import { useState } from 'react';
 import { Button } from './button';
 
 export const AuthArea = () => {
-  console.log('AuthAreaがレンダリングされました');
-
   const user = useAuthState();
-  console.log('現在のuser', user);
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   const handleLogin = async () => {
