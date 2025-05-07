@@ -8,9 +8,6 @@ import {
   useState,
 } from 'react';
 
-// ──────────────────────────────────────────
-// 1. Context 型: undefined = 初期読み込み中
-// ──────────────────────────────────────────
 type AuthContextValue = {
   user: User | null;
   loading: boolean;
@@ -24,9 +21,6 @@ const AuthContext = createContext<AuthContextValue>({
 // ページ全体用の遅延処理
 // const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-// ──────────────────────────────────────────
-// 2. Provider – アプリ全体で 1 回だけマウント
-// ──────────────────────────────────────────
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [state, setState] = useState<AuthContextValue>({
     user: null,
@@ -49,7 +43,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 };
 
-// ──────────────────────────────────────────
-// 3. カスタムフック – どこでも利用可
-// ──────────────────────────────────────────
 export const useAuth = () => useContext(AuthContext);
