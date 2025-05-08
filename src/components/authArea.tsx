@@ -8,7 +8,7 @@ export const AuthArea = () => {
   // const user = useAuthState();
   // const [isAuthenticating, setIsAuthenticating] = useState(false);
 
-  const { user, loading } = useAuthWithDelay(1500);
+  const { user, loading } = useAuthWithDelay(1000);
 
   const handleLogin = async () => {
     // setIsAuthenticating(true); // 認証開始
@@ -27,7 +27,6 @@ export const AuthArea = () => {
   if (user) {
     return (
       <>
-        <p>{user.displayName}</p>
         <Button
           handleClick={() => {
             signOut(fireAuth);

@@ -3,8 +3,17 @@
  */
 import { User } from 'firebase/auth';
 
+export type UserInfo = {
+  uid: string;
+  displayName: string | null;
+  photoURL: string | null;
+  loginMethod: string;
+  isRegistered: boolean;
+  createdAt: Date;
+} & User;
+
 // ログインユーザー型
-export type LoginUser = User | null | undefined;
+export type LoginUser = UserInfo | null | undefined;
 
 /**
  * ログイン状態が変わった時に実行される関数（今回はuseStateのsetUser関数）の型

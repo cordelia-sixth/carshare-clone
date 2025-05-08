@@ -15,7 +15,6 @@ export const Header = () => {
         </div>
         <div className="flex gap-2">
           <PCMenu />
-
           <AuthArea />
         </div>
       </div>

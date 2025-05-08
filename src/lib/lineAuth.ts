@@ -1,5 +1,5 @@
 import { FirebaseError } from 'firebase/app';
-import { OAuthProvider, signInWithPopup, User } from 'firebase/auth';
+import { OAuthProvider, signInWithPopup, type User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { fireAuth, firestore } from './firebase-auth';
 
@@ -13,6 +13,7 @@ const saveUserInfo = async (user: User) => {
         displayName: user.displayName,
         photoURL: user.photoURL,
         loginMethod: 'line',
+        isRegistered: false,
         createdAt: new Date(),
       };
       // ドキュメントが存在する場合はマージ（更新）、存在しない場合は新規作成

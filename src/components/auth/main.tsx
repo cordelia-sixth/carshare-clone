@@ -16,6 +16,4 @@ export const Main = () => {
         <Information information="ご利用にはユーザー登録が必要になります。" />
       </>
     );
-
-  return <Information information="ユーザー登録が完了していません。" />;
 };

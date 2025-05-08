@@ -1,3 +1,4 @@
+import { UserInfo } from '@/lib/authStore';
 import { fireAuth } from '@/lib/firebase-auth';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import {
@@ -9,7 +10,7 @@ import {
 } from 'react';
 
 type AuthContextValue = {
-  user: User | null;
+  user: User | UserInfo | null;
   loading: boolean;
 };
 
