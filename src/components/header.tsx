@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react';
-import { AuthArea } from './authArea';
+
+import { AuthArea } from './auth/authArea';
 import { PCMenu } from './menu/pc-menu';
 
 /**

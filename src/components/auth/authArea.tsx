@@ -2,7 +2,7 @@ import { useAuthWithDelay } from '@/hooks/useAuthWithDelay';
 import { fireAuth } from '@/lib/firebase-auth';
 import { lineAuth } from '@/lib/lineAuth';
 import { signOut } from 'firebase/auth';
-import { Button } from './button';
+import { Button } from '../button';
 
 export const AuthArea = () => {
   // const user = useAuthState();
