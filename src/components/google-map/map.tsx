@@ -1,7 +1,7 @@
 import { GoogleMap, Marker } from '@react-google-maps/api';
 
 const containerStyle = { width: '100%', height: '100%' };
-const center = { lat: 36.238, lng: 137.971972 }; // 東京駅
+const center = { lat: 35.6809591, lng: 139.7673068 };
 
 export default function Map() {
   return (
@@ -12,9 +12,7 @@ export default function Map() {
       options={{
         disableDefaultUI: true,
         gestureHandling: 'auto',
-        streetViewControl: false,
         zoomControl: true,
-        clickableIcons: false,
       }}
     >
       <Marker position={center} />

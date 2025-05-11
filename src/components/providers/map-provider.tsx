@@ -1,11 +1,11 @@
 import { Libraries, useJsApiLoader } from '@react-google-maps/api';
 import type { ReactNode } from 'react';
 
-const libs: Libraries = ['places']; // 追加したい場合は drawing, geometry など
+const libs: Libraries = ['places'];
 
 export const MapProvider = ({ children }: { children: ReactNode }) => {
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!, // 必須
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     libraries: libs,
   });
 
