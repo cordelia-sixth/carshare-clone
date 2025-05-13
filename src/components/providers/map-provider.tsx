@@ -7,6 +7,9 @@ export const MapProvider = ({ children }: { children: ReactNode }) => {
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     libraries: libs,
+    language: 'ja',
+    // region: 'JP',
+    preventGoogleFontsLoading: true,
   });
 
   if (loadError) return <p>Google Map の読み込みに失敗しました</p>;
